@@ -1,0 +1,108 @@
+1 slide
+L'idea dell'esperienza è la riproduzione di un reometro, uno strumento molto costoso 
+in grado di poter imprimere degli sforzi di taglio in maniera molto precisa a grandi volumi di fluidi al fine di studiarne le proprietà reologiche. La stessa funzione può essere riprodotta utilizzando un apparato molto più economico e che soprattutto sfrutta piccoli volumi di liquido, dell'ordine dei microlitri. In questo modo costi e quantità risulteranno ridotti e si ottiene lo stesso risultato, ovvero il calcolo di parametri come tensione superficiale e viscosità di un fluido.
+
+2 slide
+L'idea è utilizzare un laser che colpisce una goccia di qualche microlitro, sollecitata da un piccolo puff di gas, il laser viene deflesso e catturato da un fotodiodo in modo da poter estrarre dal segnale di voltaggio, tramite il metodo della trasformata di fourier, gli spettri in frequenza, dai quali si ottengono frequenze di risonanza e FWHM. Da questi parametri ricaveremo tensione superficiale e viscosità grazie a modelli teorici che ora andrò ad accennare.
+
+3 slide 
+lo scopo dell'esperienza sarà dunque riprodurre un reometro tramite un nuovo apparato per trovare gli spettri di risonanza e ricavarne tensione superficiale e viscosità per liquidi newtoniani noti, ovvero acqua e alcune soluzioni di glicerolo ed acqua, in modo da poter confrontare esperimento e teoria e quindi capire se il metodo è accurato o meno, per poi passare allo studio di eventuali fluidi non newtoniani.
+
+4 slide 
+il primo parametro che andremo a caratterizzare è la viscosità, che descrive la resistenza di un materiale allo scorrimento. Essa è la costrante di proporzionalità fra le due quantità reologiche shear rate e shear stress, rispettivamente la variazione di velocità del fluido nell'unità di spazio in direzione della sezione in cui si trova il fluido, e lo sforzo di taglio, la forza esterna applicata per unità di spazio. Se la viscosità è costante, il fluido in questione è newtoniano (ad esempio acqua, miele, glicerolo) se dipende dalla tensione superficiale è non newtoniano, in particolare in maniera direttamente proporzionale abbiamo fluidi che tendono ad assumere comportamenti solidi, irrigidirsi, e abbiamo fluidi shear thickening, al contrario se manifestano comportamenti ancora più liquidi, diminuendo la viscosità, si parla di fluidi shear thinning.
+
+5 slide
+La tensione superficiale rappresenta l'energia fornita dall'esterno per ottenere un aumento unitario della superficie dell'interfaccia. Ciò significa che per aumentare la superficie serve lavoro, e che la tensione superficiale è la variazione di forza capillare per unità di lunghezza. Nel nostro caso si opererà usando piccoli volumi di liquidi, in microfluidica le forze di capillarità dominano sulla forza di grafità e ciò è espresso ulteriormente dai bassi numeri di Bond che ritroviamo, che sono esattamente il rapporto fra queste due forze.
+
+6 slide
+Introduciamo ora dei parametri geometrici utili:
+L'Angolo di contatto è definito dalla legge di Young qui riportata, che lega la tensione superficiale liquido/aria appena introdotta con le tensioni solido/gas e solido/liquido. Dipende dalla goccia ma anche dal substrato, e in figura sarà quindi questo (lo indico).
+
+7 slide
+In base a come reagiscono fra di loro infatti può essere definito il concetto di bagnabilità, dipendente strettamente dall'angolo di contatto.
+(leggo i valori). Nel nostro caso per le ipotesi dei modelli utilizzati si opererà con substrati idrofobici.
+
+8 slide
+la linea di contatto è la linea che separa le tre fasi. 
+L'isteresi dell'angolo di contatto è un concetto legato alla dinamica di una goccia, se sollecitata infatti a causa delle asperità i due angoli di contatto possono cambiare in un intervallo $\theta=[\theta_R;\theta_A]$ (rispettivamente angolo di Reciding e Advancing). 
+Mentre il fenomeno di pinning è quando la linea di contatto rimane bloccata e l'angolo di contatto subisce un fenomeno di isteresi. Quindi l'isteresi è direttamente collegata al pinning: se si ha pinning si ha isteresi dell'angolo, in quanto la goccia se sollecitata in qualche modo, per la proprietà di incomprimibilità del volume tenderà ad oscillare, e così oscillerà anche l'angolo se la goccia è pinnata.
+
+9 slide
+Passiamo ai modelli usati. Nei modelli proposti la goccia è modellizzata attraverso un oscillatore armonico smorzato. La componente elastica è data dalla combinazione di tensione superficiale e incompribilità del volume, mentre la componente dissipativa invece è dovuta alla viscosità, che appunto attenua le oscillazioni fino a fermarle.
+Le altre ipotesi sono: linea di contatto pinnata, substrato idrofobico e regimi di capillarità.
+Per sharp, la sua è un analisi dei modi verticali per gocce in regime di capillarità in modo da poter considerare la superficie come un arco di circonferenza. Si riscontra un'omogenea sovrastima di un fattore sperimentale di $\alpha\simeq0.81$. Nel nostro esperimento f saranno ricavate con il centroide delle curve di risonanza.
+
+
+10 slide 
+Temperton migliora la formula di Sharp trovando tramite considerazioni geometriche il fattore h, ovvero l'altezza della goccia.
+Per la viscosità dalla tesi di Temperton si ricava che le oscillazioni della goccia decadono esponenzialmente con il tempo e possiamo definire un coefficiente di smorzamento ad esponente, che nel nostro caso esso corrisponderà alla larghezza a metà altezza.
+
+11 slide
+Innanzi tutto ho ricavato i parametri geometrici della goccia in relazione al substrato, ed in base ad essi ottimizzare l'esperimento. il primo setup consiste in un led focalizzato, un telecamera allied per catturare video e immagini, una pompa siringa per controllare il flusso del fluido in uscita, due substrati differenti per scegliere quello ottimale (teflon/parafilm) un programma labview per aquisire video. con tale setup si è caratterizzato l'angolo di contatto, la sua isteresi(che fosse abbastanza ampia da permettere le oscillazioni) e si è eseguito uno studio della tensione superficiale preliminare con un metodo notoriamente funzionante.
+
+12 slide
+dall'analisi con labview si può vedere che catturando le immagini e caricandole si seleziona la porzione in cui eseguire misure di angoli di contatto, aggiustando la foto nella luminosità e contrasto. Si evince così che per mantenere le ipotesi di idrofobicità è ottimale l'uso del teflon, e con esso oltretutto c'è un più ampio fenomeno di isteresi.
+Nella tabella sono riportati i risultati di angoli di contatto differenti.
+
+13 slide
+per lo studio dell'isteresi abbiamo dovuto portare il sistema agli estremi. Utilizzando la pompa e con il sistema di acquisizione video che ritroviamo nella slide precedente abbiamo potuto generare dei frame ogni frazione di secondo che sembrava ottimale, in modo da poter catturare una buona quantità di immagini che vediamo qui: nella prima la goccia si sta riempiendo di fluido, e l'angolo cresce perchè la linea di contatto è pinnata. quando il volume aumenta abbastanza da depinnare la goccia questa avanza, mantenendo l'angolo più ampio possibile, che sarà quindi theta advancing. sotto è descritto il processo inverso, quando viene ritirato il fluido e quindi diminuito l'angolo.
+
+14 slide
+Si è utilizzato imageji invece per calcolare il profilo della goccia L: con un tool è possibile estrarre il raggio della circonferenza tracciata, e sapendo che L=2tethaR siamo apposto. vi è poi un tool molto utile al fine di utilizzare il metodo della pendant drop. Il tool ricava direttamente il valore della viscosità, inserendo il valore della densità del fluido e la scala in pixels.
+
+15 slide
+Finite le misure preliminari possiamo passare al vero setup: nella ricostruzione possiamo notare che un laser attraversa la goccia di fluido e colpisce un fotodiodo. Un piccolo puff prodotto semplicemente soffiando sulla goccia genera le oscillazioni nella goccia, che deflette il raggio laser. Tale deflessione può essere catturata tramite un programma labview che utilizza una scheda di acquisizione dati che mostra il damping dell'oscillazione del segnale di voltaggio. 
+
+16 slide
+questo è il segnale di voltaggio riprodotto e si nota molto chiaramente come per viscosità maggiori, ossia il segnale a destra che mostra una soluzione di glicerolo all'85\% pura, si ha una dissipazione più immediata, maggiore.
+
+17 slide
+Da questi segnali di voltaggio si è poi eseguita la trasformata di fourier, possiamo vedere da questa slide che i risultati ottenuti per acqua ultrapura.
+Nell'ultima slide si può notare come molto spesso ho dovuto rifare le misure notando che ci fosse qualcosa che non va negli spettri. L'errore che si riscontra se la goccia si depinna è uno sdoppiamento del picco, questo perchè la geometria della goccia tende a cambiare per via dell'allungamento nella direzione de soffio, come abbiamo visto dal video, le due direzioni splittano il picco che risulta degenere se la geometria è simmetrica, evidenziando un differente modo di vibrazione per direzione.
+
+18 slide
+Per analizzare i picchi è stato utilizzato il tool peak analizer di Origin.
+
+19 slide
+possiamo vedere da questa slide che i risultati ottenuti per acqua ultrapura sono incoraggianti per il primo modo normale di vibrazione. Si è deciso di utilizzare come confronto teorico il modello di temperton, perchè più preciso in fattori geometrici e presenta un errore più basso. L'errore sperimentale è stato trovato utilizzando la deviazione standard, l'errore teorico con il metodo di propagazione degli errori con derivate parziali.
+
+20 slide
+grafici $f^2$ versus 1/m, e ci aspettiamo una relazione lineare fra le due, guardando alla formula di Temperton. Vi sono due grafici differenti perchè si hanno due set di dati differenti: inizialmente si erano presi dei volumi nel range di volumi scelto (20muL-100muL) ma poi si è voluto estendere la trattazione a volumi più bassi per rientrare ancora più nel regime di capillarità.
+
+21 slide
+risultati per il glicerolo sono di nuovo buoni, in quanto si nota un buon accordo, a parte per un valore, quello di 20muL di glicerolo 85\%, probabilmente dovuto ad una sovrastima della quantità di volume.
+ 
+22 slide
+di nuovo questi sono gli spettri ricavati per il caso di glicerolo+acqua. si può notare anche come al crescere della quantita di glicerolo in acqua( e quindi della viscosità) come si allargano i picchi, infatti la FWHM rappresenta la gamma.
+
+23 slide
+I risultati hanno tutti un buon accordo all'interno dell'errore sperimentale, a parte per quel valore di cui parlavamo prima che si può ragionevolmente scartare. accanto si ha il grafico scartando il punto.
+
+24 slide
+Passiamo dunque ai risultati: per quanto riguarda la tensione superficiale, la formula utilizzata è quella ricavata da Temperton, sono prese in considerazione solo i valori consistenti, e dunque solo i valori della frequenza n=2.
+Di seguito sono riportati i valori teorici, quelli sperimentali ricavati con il metodo pendent drop, quelli sperimentali ricavati con l'apparato. Si nota che tutti i valori rientrano nell'errore sperimentale, nei valori teorici. L'errore è stato calcolato con l'errore sulla somma pesata, ovvero la radice di 1 sulla somma dei pesi (1/errore alla seconda).
+
+25 slide
+Per quanto riguarda la viscosità, più aumenta la viscosità, più il valore medio si discosta da quello atteso.
+
+26 slide
+Graficamente ho deciso di plottare in scala logaritmica la FWHM e L^-2 perchè ci aspettiamo abbiano un andamento lineare. dunque per quanto riguarda l'acqua siamo nei parametri, abbiamo una buona statistica e infatti torna. 
+
+27 slide
+Nel caso del glicerolo la staistica è molto povera ed è difficile poterne trarre un qualche significato fisico utile da questo grafico. Come dicevo il problema è dovuto alla bassa statistica, in più avevo una quantità grande di picchi da scartare, infatti come possiamo vedere dall figure, i picchi spesso erano frastagliati, evidenziando l'esistenza di tanti altri picchi più piccoli, che il peak analizer mi trovata ma sbagliando la FWHM. dunque il fatto che il valore non sia centrato bene può anche essere dovuto alla sottostima del peak analizer delle fwhm.
+
+28 slide
+in conclusione ciò che si può dire è che i problemi riscotrati sono soffio non controllato, mancanza di dati per alcuni volumi, Forma dei picchi non sempre ottimale, Ad ognuno posso attribuire una possibile soluzione: per il soffio consiglio di procurarsi  un diffusore di gas cotrollabile a distanza, in modo da poterne controllare l'intensità e scegliere tipologia di gas (tipo Azoto). poi per la mancanza di dati per alcuni volumi e  per la forma dei picchi si può pensare di migliorare le condizioni ambientali e il rumore. C'è molta variabilità per quanto riguarda la temperatura della stanza, alle volte le misure sono state fatte a condizionatore acceso, altre spento, e in piena estate vi sono anche 10 gradi di differenza. Poi per aumentare l'idrofobicità si può pensare a bagnare il substrato con sostanze oleose, in modo da  rendere la goccia pressochè sferica. Per eliminare il rumore di fondo si registra il segnale senza soffio e lo si rimuove da quello con il soffio, o si cambia analizzatore di picchi, usando ad esempio un software customizzato(si usa root, python..).
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+POSSIBILI SOLUZIONI
+Tutt'ora non sono sicura di che picchi io abbia visto sopra all' n=2, può essere che si trattava di picchi dovuti a luce ambientale o dei modi vibrazionali meccanici della base se si aveva qualche vibrazione del tavolo anomala durante la presa dati, oppure un misto fra modi orizzontali e verticali.
+
+perchè non hai fatto trattazione di 1-10 muL anche per le soluzioni di glicerolo? Perchè quando un fluido è viscoso se si è a volumi così bassi fare una depositazione con pipetta comincia ad essere complicato, del liquido potrebbe rimanere all'interno e quindi si hanno delle sottostime del volume depositato.
+
+Perchè più la viscosità è alta più i valori sono sballati?
+perchè:
+-più difficile controllare il soffio. 
+-la statistica è veramente molto povera, infatti il primo volume del glicerolo all'85\% è anche da scartare, mentre quello da 100muL è una sola misura. Analogamente per il gly75\%, abbiamo solo 3 volumi diversi da prendere in considerazione, e così anche il gly 60\% , è stato impossibile ricavare i valori più alti di volume. è come se a viscosità più alte sia molto complesso eccitare i modi vibrazionali della goccia con il solo soffio.
+-i picchi sono wide e il peak analyzer non riesce a considerare il picco giusto.
+- presenza di impurità e non perfetta stesura del Teflon che rendono l'angolo di contatto diverso da quello misurato, o errori nella misurazione stessa essendo il tool di imagej con alta variabilità.
